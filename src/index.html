@@ -10,23 +10,51 @@
 </head>
 
 <body>
-    <section class="conta-mesa">
+    <section>
         <form class="form-container">
-            <img src="https://s3-alpha-sig.figma.com/img/bdc2/06f1/877b7940de78091f301870655e0fcdb6?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=l0HYkvPXUS8H1EKLddPyuuhDm9zvZn0NTMnzsUHdYfuD7TUTT~npPHHchpNIGgIu6IPBo5h3O3g9UKJhtHRBMg-1vfox02RqePxgj2~HJPY5nW8NpyuN636tDjyq0gP3-3ohng5wOIwPq9pGI9~GI1L16EI1G8ibaa9Aqcje9PgKuP8Vkud9HqhHTUkqtVfTNmpkgEiLfJyE9lDyx4VmWMVExLbus-GaYEuAuh96CJTxYcMTlFafBL7Hmkyx5oNsDJJLAjr5qbK~qJygstgNlgSAd61fqCQ0tzgaXYGCXLUozLlrvaVfg6ElnRRWUTK7BnxArRXXyzloD8dEyyj4mg__" alt="Logo Imagem Pizzaria">
-            <div class="inputs">
+            <img src="https://s3-alpha-sig.figma.com/img/bdc2/06f1/877b7940de78091f301870655e0fcdb6?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=l0HYkvPXUS8H1EKLddPyuuhDm9zvZn0NTMnzsUHdYfuD7TUTT~npPHHchpNIGgIu6IPBo5h3O3g9UKJhtHRBMg-1vfox02RqePxgj2~HJPY5nW8NpyuN636tDjyq0gP3-3ohng5wOIwPq9pGI9~GI1L16EI1G8ibaa9Aqcje9PgKuP8Vkud9HqhHTUkqtVfTNmpkgEiLfJyE9lDyx4VmWMVExLbus-GaYEuAuh96CJTxYcMTlFafBL7Hmkyx5oNsDJJLAjr5qbK~qJygstgNlgSAd61fqCQ0tzgaXYGCXLUozLlrvaVfg6ElnRRWUTK7BnxArRXXyzloD8dEyyj4mg__"
+                alt="Logo Imagem Pizzaria">
+            <p id="msg-desconto" class="msg-desconto">Pagamentos por <b>PIX</b> ou <b>DINHEIRO</b> recebem 10% de
+                <b>DESCONTO</b> no valor total da conta!
+            </p>
+            <div class="question">
                 <label for="valor-total-conta">Valor total da conta:</label>
-                <input class="input-element" type="number" id="valor-total-conta" name="valor-total-conta" placeholder="Digite o valor total da conta...">
+                <input class="input-element" type="number" id="valor-total-conta" name="valor-total-conta"
+                    placeholder="Digite o valor total da conta...">
             </div>
-            <div class="inputs">
+            <div class="question">
                 <label for="nr-pessoas">Quantidade de pagantes:</label>
-                <input class="input-element" type="number" id="nr-pessoas" name="nr-pessoas" placeholder="Digite quantas pessoas irão pagar a conta...">
+                <input class="input-element" type="number" id="nr-pessoas" name="nr-pessoas"
+                    placeholder="Digite quantas pessoas irão pagar a conta...">
+            </div>
+            <div class="question">
+                <label for="forma-pagamento">Forma de pagamento:</label>
+                <select class="input-selecao" id="forma-pagamento" name="forma-pagamento">
+                    <option value=1>Pix</option>
+                    <option value=2>Dinheiro</option>
+                    <option value=3>Cartão</option>
+                </select>
             </div>
             <div class="button-submit">
-            <button type="submit">Calcular</button>
+                <button type="submit" id="botao-calcular">Calcular</button>
             </div>
-            <p id="error-msg" class="error-msg"></p>
-            <p id="success=msg" class="success-msg"></p>
         </form>
+    </section>
+    <section>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <h2>Dados do pagamento:</h2>
+                <div class="dados-pagamento">
+                    <p id="total-conta" class="paragrafo-pagamento"></p>
+                    <p id="nr-pessoas-pag" class="paragrafo-pagamento"></p>
+                    <p id="total-desconto" class="paragrafo-pagamento"></p>
+                    <p id="total-pessoa" class="paragrafo-pagamento"></p>
+                </div>    
+                <div class="buttons-modal">
+                    <button class="button-submit" id="botao-finalizar">Finalizar</button>
+                </div>
+            </div>
+        </div>
     </section>
     <script src="index.js"></script>
 </body>

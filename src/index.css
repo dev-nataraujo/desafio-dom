@@ -1,7 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+html,
 body {
+    margin: 0;
     background-color: #ccc;
+    height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
 }
 
 .form-container {
@@ -10,22 +29,35 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 480px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    width: 450px;
     border: 5px solid #ccc;
     border-radius: 8px;
     padding: 15px;
 }
 
 img {
-    width: 300px;
+    width: 240px;
+    margin: 10px;
     height: auto;
-    padding: 20px;
 }
 
-.inputs {
+.msg-desconto {
+    text-align: center;
+    width: 340px;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    background-color: #f6edd8;
+    color: brown;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.question {
     padding: 8px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
 }
 
 .input-element {
@@ -37,19 +69,89 @@ img {
     border-radius: 3px;
 }
 
-.button-submit {
-    padding: 20px;
+.input-selecao {
+    width: 110px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
 
 button {
     display: flex;
     justify-content: center;
-    min-width: 180px;
+    width: 180px;
     border: none;
     border-radius: 5px;
     background-color: brown;
     color: #fff;
     font-weight: bold;
-    font-size: 15;
+    font-size: 16px;
     padding: 10px;
+    margin: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.dados-pagamento {
+    display: flex;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.modal {
+    display: none; /* Esconde o modal por padrão */
+    position: fixed; /* Fica fixo na tela */
+    z-index: 1; /* Fica acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    overflow: auto; /* Habilita scroll se necessário */
+    background-color: rgb(0,0,0); /* Cor de fundo */
+    background-color: rgba(0,0,0,0.4); /* Fundo semi-transparente */
+    }
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fefefe;
+    justify-content: center;
+    align-items: center;
+    margin: 15% auto; /* Centraliza o modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Largura do modal */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+    color: brown;
+    width: 500px;
+}
+
+.dados-pagamento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.buttons-modal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
 }
